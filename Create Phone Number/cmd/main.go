@@ -21,5 +21,5 @@ func CreatePhoneNumber(d [10]uint) (phone string) {
 	country := fmt.Sprintf("%v%v%v", d[0], d[1], d[2])
 	index := fmt.Sprintf("%v%v%v", d[3], d[4], d[5])
 	number := fmt.Sprintf("%v%v%v%v", d[6], d[7], d[8], d[9])
-	return fmt.Sprintf("(%v) %v-%v ", country, index, number)
+	return fmt.Sprintf("(%v) %v-%v", country, index, number)
 }
