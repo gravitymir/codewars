@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"sort"
 )
 
 //https://leetcode.com/problems/two-sum/
@@ -11,14 +10,20 @@ func main() {
 	sl := []int{
 		2, 7, 11, 15,
 	}
-	twoSum(sl, 9)
+	fmt.Println(twoSum(sl, 9))
 }
-func twoSum(nums []int, target int) []int {
-	sort.Slice(nums, func(i, j int) bool {
-		return i < j
-	})
-	fmt.Println(nums)
-	return []int{1, 2}
+func twoSum(nums []int, target int) (sl []int) {
+	for k := range nums {
+		for k2 := range nums {
+			if k == k2 {
+				continue
+			}
+			if nums[k]+nums[k2] == target {
+				return []int{k, k2}
+			}
+		}
+	}
+	return
 }
 
 /*
